@@ -5,7 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // Renderer and Camera
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
+renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 renderer.domElement.style.position = 'fixed';
@@ -349,14 +350,14 @@ loader.load('./models/Workshop.glb', function (gltf) {
 });
 
 // Stars
-for (let i = 0; i < 200; i++) {
+for (let i = 0; i < 30; i++) {
   const geometry = new THREE.SphereGeometry(0.12, 32, 16)
   const material = new THREE.MeshBasicMaterial({ color: 0xffffff })
   const sphere = new THREE.Mesh(geometry, material); scene.add(sphere);
   sphere.position.set(
-    (Math.floor(Math.random() * 40)) * (Math.round(Math.random()) * 2 - 1),
-    (Math.floor(Math.random() * 40)) * (Math.round(Math.random()) * 2 - 1),
-    (Math.floor(Math.random() * 40)) * (Math.round(Math.random()) * 2 - 1)
+    (Math.floor(Math.random() * 20)) * (Math.round(Math.random()) * 2 - 1),
+    (Math.floor(Math.random() * 30)) * (Math.round(Math.random()) * 2 - 1),
+    (Math.floor(Math.random() * 20)) * (Math.round(Math.random()) * 2 - 1)
   )
   gsap.to(sphere.position, {
     x: "+=0.2",
@@ -491,7 +492,7 @@ gsap.to(".project", {
       gsap.to(".project", {
         opacity: 1,
         duration: .5,
-        y: 0
+        y: -40
       });
     },
     onLeaveBack: () => {
