@@ -14,25 +14,25 @@
         class="fixed z-50 w-5 h-5 border-4 border-green-400 rounded-full pointer-events-none cursor-ring transform -translate-x-1/2 -translate-y-1/2">
     </div>
 
-    <div class="fixed z-10 flex flex-col items-start justify-center w-full h-screen intro pl-36">
+    <div class="fixed flex flex-col items-start justify-center w-full h-screen intro pl-36">
         <h3 class="text-3xl">Hello, I'm</h3>
         <h1 class='text-5xl font-semibold hover-text bg-gradient-to-r from-green-500 to-blue-700'>Jialiang Cao</h1>
         <h3 class="text-3xl">A full-stack web developer</h3>
         <img src="./images/scroll.png" alt="Icon" class="absolute mb-4 instruction icon-class w-18 h-18 bottom-6 left-1/2 transform -translate-x-1/2">
     </div>
 
-    <div class="fixed z-10 flex flex-col items-start justify-center w-full h-screen text-3xl opacity-0 work pl-36">
+    <div class="fixed flex flex-col items-start justify-center w-full h-screen text-3xl opacity-0 work pl-36">
         <h3 class="mb-10 text-4xl font-semibold bg-green-500">Work Experience</h3>
-        <h3 class="text-4xl font-semibold">Full-Stack Web Developer | BMCC</h3>
+        <h3 class="text-4xl font-semibold">Research Intern/Web Developer | BMCC</h3>
         <p class="text-xl">June 2024 - Present</p>
-        <p class="pr-24">Developed RESTful websites with React & NextJS. Gathered and analyzed user accessibility data with MongoDB and Firebase.</p>
+        <p class="pr-24">Developed RESTful websites with React & NextJS. Gathered and analyzed user accessibility data for blind and low vision communities with MongoDB and Firebase.</p>
         <h3 class="pt-10 text-4xl font-semibold">Full-Stack Web Developer | Peony & Lark </h3>
         <p class="text-xl">June 2023 - August 2023</p>
         <p class="pr-24">Built a skincare product website on Shopify (generated over $5k revenue), inventory management system,
         and product recommendation algorithm. Implemented styling from manager & UI team feedback.</p>
     </div>
 
-<div class="fixed z-40 flex flex-col items-start justify-center w-full h-screen overflow-y-auto text-3xl opacity-0 -translate-x-3/4 project pl-36">
+<div class="fixed z-30 flex flex-col items-start justify-center w-full h-screen overflow-y-auto text-3xl opacity-0 -translate-x-3/4 project pl-36">
     <h3 class="mb-10 text-4xl font-semibold bg-green-500">Projects</h3>
     <div class="w-full grid grid-cols-4 gap-6">
         <section class="flex flex-col justify-between p-4 bg-white rounded-lg shadow-xl projectCard">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="mt-4 text-center">
                     <h3 class="text-2xl font-semibold">Canequest</h3>
-                    <p class="mb-2 text-base text-gray-600">A full-stack NEXTJS web app built to gather user accessibility data from the visually impaired for AI training..</p>
+                    <p class="mb-2 text-base text-gray-600">A full-stack NEXTJS web app built to gather user accessibility data from the visually impaired for AI training.</p>
                 </div>
             </div>
             <a href="https://canequest.vercel.app" target="_blank" rel="noopener noreferrer" class="block w-full py-2 text-lg font-bold text-center text-white bg-green-500 rounded-md hover:from-purple-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
@@ -66,7 +66,7 @@
     </div>
 </div>
 
-    <div class="fixed z-10 flex flex-col items-start justify-center w-full h-screen text-3xl opacity-0 skills pl-36">
+    <div class="fixed flex flex-col items-start justify-center w-full h-screen text-3xl opacity-0 skills pl-36">
         <h3 class="mb-10 text-4xl font-semibold bg-green-500">Skills</h3>
         <div class="px-5 py-5 bg-white shadow-2xl text-slate-800 rounded-md">
             <div class="mb-8 skill-category">
@@ -102,8 +102,19 @@
                 </div>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">MongoDB</span>
-                    <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">SQLite/Others</span>
+                    <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">SQL</span>
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Firebase</span>
+                </div>
+            </div>
+             <div class="mb-8 skill-category">
+                <h4 class="mb-2 text-xl font-semibold">Other</h4>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Git/Github</span>
+                    <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Vercel/Github.io/Netlify</span>
+                    <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Linux/Unix & CLI</span>
                 </div>
             </div>
         </div>
@@ -112,13 +123,18 @@
     <div class='fixed z-40 flex items-center justify-start w-full h-screen text-3xl opacity-0 -translate-x-3/4 contact pl-36'>
         <div class="w-full max-w-lg">
             <h3 class="mb-10 text-4xl font-semibold text-center text-slate-800">Interested? Let's work.</h3>
-            <form class="p-6 px-5 py-5 bg-white shadow-2xl outline outline-1 rounded-md">
-                <input type="text" placeholder="Email"
+            <form action="https://api.web3forms.com/submit" method="POST" class="p-6 px-5 py-5 bg-white shadow-2xl outline outline-1 rounded-md">
+                <input type="hidden" name="access_key" value="c09c1132-8b6d-470d-a8c6-98b8dbe2fcb4">
+                <input type="text" required name="email" placeholder="Email"
                     class="w-full h-12 px-4 mb-4 text-base placeholder-gray-400 rounded-md bg-emerald-50 text-slate-800 focus:outline-none focus:ring-2 focus:ring-green-500">
-                <textarea placeholder="Message"
+                                <input type="text" required name="name" placeholder="Full Name"
+                    class="w-full h-12 px-4 mb-4 text-base placeholder-gray-400 rounded-md bg-emerald-50 text-slate-800 focus:outline-none focus:ring-2 focus:ring-green-500">
+
+                <textarea name="message" required placeholder="Message"
                     class="w-full h-32 pt-2 pl-4 mb-4 text-base placeholder-gray-400 resize-none rounded-md bg-emerald-50 text-slate-800 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <button type="submit"
-                    class="z-40 flex items-center justify-center w-full h-12 text-lg font-bold text-white bg-green-500 submit-button rounded-md hover:from-purple-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                    class="flex items-center justify-center w-full h-12 text-lg font-bold text-white bg-green-500 submit-button rounded-md hover:from-purple-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
                     Send Message
                 </button>
             </form>

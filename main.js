@@ -491,14 +491,14 @@ gsap.to(".project", {
       gsap.to(".project", {
         opacity: 1,
         duration: .5,
-        x: 0
+        x: 270
       });
     },
     onLeaveBack: () => {
       gsap.to(".project", {
-        opacity: 0,
         duration: .5,
-        x: -500
+        x: -500,
+        opacity: 0
       });
     }
   }
