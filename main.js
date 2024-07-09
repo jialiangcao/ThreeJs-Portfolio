@@ -58,7 +58,6 @@ loader.load('./models/Moon.glb', function (gltf) {
     x: 0.1,  
     y: 0.1,  
     z: 0.1, 
-    scrub: 1, 
     ease: "power.out"  
   });
 }, undefined, function (error) {
@@ -491,13 +490,15 @@ gsap.to(".project", {
     onEnter: () => {
       gsap.to(".project", {
         opacity: 1,
-        duration: .5
+        duration: .5,
+        x: 0
       });
     },
     onLeaveBack: () => {
       gsap.to(".project", {
         opacity: 0,
-        duration: .5
+        duration: .5,
+        x: -500
       });
     }
   }
@@ -573,13 +574,15 @@ gsap.to(".contact", {
     onEnter: () => {
       gsap.to(".contact", {
         opacity: 1,
-        duration: .5
+        duration: .5,
+        x: 0,
       });
     },
     onLeaveBack: () => {
       gsap.to(".contact", {
         opacity: 0,
-        duration: .5
+        duration: .5,
+        x: -500
       });
     }
   }
