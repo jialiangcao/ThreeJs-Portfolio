@@ -2,7 +2,8 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 // Renderer and Camera
 const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
@@ -411,8 +412,23 @@ gsap.fromTo(scene.background, {r: 0.3, g: 0.6, b: 0.85}, {
   b: .8,
 });
 
+// Sidebar
+let sidebarOpen = false;
+const sidebar = document.querySelector('.sidebar');
+gsap.to(sidebar, { xPercent: 100 })
+   const toggleButton = document.querySelector('.menu');
+   toggleButton.addEventListener('click', () => {
+     if (!sidebarOpen) {
+          gsap.to(sidebar, { xPercent: 0, duration: 0.5, ease: 'power2.out' });
+          sidebarOpen = true;
+     } else {
+       gsap.to(sidebar, {xPercent: 100,  duration:0.5, ease: 'power2.out' });
+       sidebarOpen = false;
+     }
 
-//Text Animations
+  });
+
+// Text Animations
 gsap.to(".instruction", {
   y: 14,
   repeat: -1,
@@ -603,49 +619,68 @@ const updateCursor = (event) => {
 };
 
 // Add event listener for mouse move
+
 document.addEventListener('mousemove', updateCursor);
 
-const submitButton = document.querySelector(".submit-button")
-submitButton.addEventListener('mouseenter', () => {
+const ringExpand = () => {
   gsap.to(cursorRing, {
     duration: 0.1,
     scale: 1.75, // Increase size on hover
     backgroundColor: 'rgba(255, 255, 255, 0.5)', // Change background color on hover
     borderColor: '#ffffff' // Change border color on hover
   });
-});
+};
 
-submitButton.addEventListener('mouseleave', () => {
+const ringLeave = () => {
   gsap.to(cursorRing, {
     duration: 0.1,
     scale: 1, // Revert size
     backgroundColor: 'transparent', // Revert background color
     borderColor: '#22c55e' // Revert border color
   });
-});
+};
+
+toggleButton.addEventListener('mouseenter', ringExpand)
+
+toggleButton.addEventListener('mouseleave', ringLeave)
+
+const submitButton = document.querySelector(".submit-button");
+submitButton.addEventListener('mouseenter', ringExpand); // Pass function reference
+
+submitButton.addEventListener('mouseleave', ringLeave); // Pass function reference
 
 const links = document.querySelectorAll("a");
 
 links.forEach(link => {
-  link.addEventListener('mouseenter', () => {
-    gsap.to(cursorRing, {
-      duration: 0.1,
-      scale: 1.75, 
-      backgroundColor: 'rgba(255, 255, 255, 0.5)',
-      borderColor: '#ffffff'
-    });
-  });
+  link.addEventListener('mouseenter', ringExpand); // Pass function reference
 
-  link.addEventListener('mouseleave', () => {
-    gsap.to(cursorRing, {
-      duration: 0.1,
-      scale: 1,
-      backgroundColor: 'transparent',
-      borderColor: '#22c55e'
-    });
-  });
+  link.addEventListener('mouseleave', ringLeave); // Pass function reference
 });
 
+const sideWork = document.querySelector('.sideWork')
+sideWork.addEventListener('click', () => {
+     gsap.to(window, { duration: 1, scrollTo: "#scroll2" })
+     gsap.to(sidebar, {xPercent: 100,  duration:0.5, ease: 'power2.out' })
+   }
+)
+const sideProjects = document.querySelector(".sideProjects")
+sideProjects.addEventListener('click', () => {
+     gsap.to(window, { duration: 1, scrollTo: "#scroll3" })
+     gsap.to(sidebar, {xPercent: 100,  duration:0.5, ease: 'power2.out' })
+  }
+)
+const sideSkills = document.querySelector(".sideSkills")
+sideSkills.addEventListener('click', () => {
+     gsap.to(window, { duration: 1, scrollTo: "#scroll5" })
+     gsap.to(sidebar, {xPercent: 100,  duration:0.5, ease: 'power2.out' })
+  }
+)
+const sideContact = document.querySelector(".sideContacts")
+sideContact.addEventListener('click', () => {
+     gsap.to(window, { duration: 1, scrollTo: "#scroll8" })
+     gsap.to(sidebar, {xPercent: 100,  duration:0.5, ease: 'power2.out' })
+  }
+)
 //Panning effect
 const onMouseMove = (event) => {
   const mouseX = (event.clientX / window.innerWidth) * 2 - 1;

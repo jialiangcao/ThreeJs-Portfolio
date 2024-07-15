@@ -15,7 +15,15 @@
     <div
         class="fixed z-50 w-5 h-5 border-4 border-green-400 rounded-full pointer-events-none cursor-ring transform -translate-x-1/2 -translate-y-1/2">
     </div>
-
+    <div class="w-full text-center">
+        <button type="submit" class="fixed z-40 h-10 p-1 font-semibold text-center bg-green-500 shadow-md menu right-3 top-3 rounded-md">Menu</button>
+    </div>
+    <div class="fixed right-0 z-30 flex flex-col justify-between h-full py-40 text-center text-black bg-white shadow-2xl sm:w-full lg:w-1/4 sidebar">
+        <a class="text-4xl font-semibold sideWork text-slate-800 hover:underline hover:text-blue-600">Work</a>
+        <a class="text-4xl font-semibold sideProjects text-slate-800 hover:underline hover:text-blue-600">Projects</a>
+        <a class="text-4xl font-semibold sideSkills text-slate-800 hover:underline hover:text-blue-600">Skills</a>
+        <a class="text-4xl font-semibold sideContacts text-slate-800 hover:underline hover:text-blue-600">Contact</a>
+    </div>
     <div class="fixed flex flex-col items-start justify-center w-full h-screen intro sm:pl-10 lg:pl-36">
         <h3 class="text-3xl">Hello, I'm</h3>
         <h1 class='text-5xl font-semibold hover-text bg-gradient-to-r from-green-500 to-blue-700'>Jialiang Cao</h1>
@@ -27,14 +35,15 @@
         <h3 class="font-semibold bg-green-500 lg:mb-10 sm:text-3xl lg:text-4xl sm:mb-2">Work Experience</h3>
         <h3 class="font-semibold lg:text-4xl sm:text-2xl">Research Intern - Web Developer | BMCC</h3>
         <p class="text-xl">June 2024 - Present</p>
-        <p class="pr-24">Developed RESTful websites with React & NextJS. Gathered and analyzed user accessibility data for blind and low vision communities with MongoDB and Firebase.</p>
+        <p class="pr-24">Developed responsive and accessible websites using React and NextJS, implementing RESTful design principles. Gathered and analyzed user accessibility data for blind and low vision communities with MongoDB and Firebase.</p>
         <h3 class="font-semibold lg:pt-10 lg:text-4xl sm:text-2xl sm:pt-4">Full-Stack Web Developer | Peony & Lark </h3>
         <p class="text-xl">June 2023 - August 2023</p>
-        <p class="pr-24">Built a skincare E-commerce website on Shopify (generated over $5k revenue), inventory management system,
-        and product recommendation algorithm.</p>
+        <p class="pr-24">Built a skincare E-commerce website on Shopify, designed a inventory management system,
+        and implemented a product recommendation algorithm.</p>
+        <div id="workExperience"></div>
     </div>
 
-<div class="fixed z-30 flex flex-col items-start justify-center w-full h-screen text-3xl opacity-0 sm:mb-10 sm:overflow-y-visible lg:overflow-y-hidden -translate-y-full project sm:px-5 lg:pl-36">
+<div class="fixed flex flex-col items-start justify-center w-full h-screen text-3xl opacity-0 sm:mb-10 sm:overflow-y-visible lg:overflow-y-hidden -translate-y-full project sm:px-5 lg:pl-36">
     <h3 class="font-semibold bg-green-500 lg:text-4xl sm:text-3xl lg:mb-10 sm:mb-4">Projects</h3>
     <div class="w-full h-3/4 grid sm:grid-cols-1 md:grid-colrs-2 lg:grid-cols-4 gap-4">
         <section class="flex flex-col justify-between p-3 bg-white rounded-lg shadow-xl projectCard">
@@ -61,6 +70,7 @@
                     <p class="mt-2 text-base text-gray-600">A personalized and optimized blogging website that supports markdown self-publishing built on the Astro framework.</p>
                 </div>
             </div>
+            
             <a href="https://ashleyhehe.netlify.app" target="_blank" rel="noopener noreferrer" class="block w-full py-2 text-base font-bold text-center text-white bg-green-500 hover:bg-green-600 rounded-md hover:from-purple-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
                 https://ashleyhehe.netlify.app
             </a>
@@ -74,23 +84,17 @@
         <div class="px-5 py-5 bg-white shadow-2xl text-slate-800 rounded-md">
             <div class="mb-8 skill-category">
                 <h4 class="mb-2 text-xl font-semibold">Web Frameworks</h4>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 65%;"></div>
-                </div>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">React</span>
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Node/Express</span>
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Next.js</span>
-                    <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Tailwind CSS</span>
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Three.js</span>
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">GSAP</span>
+                    <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Tailwind CSS</span>
                 </div>
             </div>
             <div class="mb-8 skill-category">
                 <h4 class="mb-2 text-xl font-semibold">Languages</h4>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 85%;"></div>
-                </div>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">JavaScript</span>
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">HTML, CSS</span>
@@ -100,20 +104,14 @@
             </div>
             <div class="mb-8 skill-category">
                 <h4 class="mb-2 text-xl font-semibold">Databases</h4>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 50%;"></div>
-                </div>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">MongoDB</span>
-                    <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">SQL</span>
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Firebase</span>
+                    <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">SQL</span>
                 </div>
             </div>
              <div class="mb-8 skill-category">
                 <h4 class="mb-2 text-xl font-semibold">Other</h4>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 70%;"></div>
-                </div>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Git/Github</span>
                     <span class="px-2 py-1 text-sm text-white bg-green-500 rounded-full">Vercel/Github.io/Netlify</span>
@@ -123,7 +121,7 @@
         </div>
     </div>
 
-    <div class='fixed z-40 flex items-center justify-start w-full h-screen text-3xl opacity-0 -translate-x-3/4 contact sm:px-5 lg:pl-36'>
+    <div class='fixed flex items-center justify-start w-full h-screen text-3xl opacity-0 -translate-x-3/4 contact sm:px-5 lg:pl-36'>
         <div class="w-full max-w-lg">
             <h3 class="mb-10 text-4xl font-semibold text-center text-slate-800">Interested? Let's work.</h3>
             <form action="https://api.web3forms.com/submit" method="POST" class="p-6 px-5 py-5 bg-white shadow-2xl outline outline-1 rounded-md">
@@ -137,7 +135,7 @@
                     class="w-full h-32 pt-2 pl-4 mb-4 text-base placeholder-gray-400 resize-none rounded-md bg-emerald-50 text-slate-800 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <button type="submit"
-                    class="flex items-center justify-center w-full h-12 text-lg font-bold text-white bg-green-500 submit-button rounded-md hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                    class="z-20 flex items-center justify-center w-full h-12 text-lg font-bold text-white bg-green-500 submit-button rounded-md hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
                     Send Message
                 </button>
             </form>
@@ -151,13 +149,13 @@
 
     <div class="h-screen spacer"></div>
     <div class="h-screen scroll"></div>
-    <div class="h-screen scroll2"></div>
-    <div class="h-screen scroll3"></div>
-    <div class="h-screen scroll4"></div>
-    <div class="h-screen scroll5"></div>
-    <div class="h-screen scroll6"></div>
-    <div class="h-screen scroll7"></div>
-    <div class="h-screen scroll8"></div>
+    <div id="scroll2" class="h-screen scroll2"></div>
+    <div id="scroll3" class="h-screen scroll3"></div>
+    <div id="scroll4" class="h-screen scroll4"></div>
+    <div id="scroll5" class="h-screen scroll5"></div>
+    <div id="scroll6" class="h-screen scroll6"></div>
+    <div id="scroll7" class="h-screen scroll7"></div>
+    <div id="scroll8" class="h-screen scroll8"></div>
     <script type="module" src="/main.js"></script>
 </body>
 
