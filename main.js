@@ -279,7 +279,7 @@ loader.load('./models/Airplane.glb', function (gltf) {
   airplane = gltf.scene
   scene.add(airplane);
   airplane.scale.set(10, 6, 10)
-  airplane.position.set(0, -200, 0)
+  airplane.position.set(0, -200, -5)
   gsap.to(airplane.position, {
     scrollTrigger: {
       trigger: ".scroll3",
@@ -287,9 +287,9 @@ loader.load('./models/Airplane.glb', function (gltf) {
       end: "top top",
       scrub: 1,
     },
-    y: 0
+    y: -15
   });
-  gsap.fromTo(airplane.position, {y:0}, {
+  gsap.fromTo(airplane.position, {y:-70}, {
     immediateRender: false,
     scrollTrigger: {
       trigger: ".scroll4",
@@ -351,12 +351,12 @@ loader.load('./models/Workshop.glb', function (gltf) {
 });
 
 // Stars
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 50; i++) {
   const geometry = new THREE.SphereGeometry(0.12, 32, 16)
   const material = new THREE.MeshBasicMaterial({ color: 0xffffff })
   const sphere = new THREE.Mesh(geometry, material); scene.add(sphere);
   sphere.position.set(
-    (Math.floor(Math.random() * 20)) * (Math.round(Math.random()) * 2 - 1),
+    (Math.floor(Math.random() * 70)) * (Math.round(Math.random()) * 2 - 1),
     (Math.floor(Math.random() * 30)) * (Math.round(Math.random()) * 2 - 1),
     (Math.floor(Math.random() * 20)) * (Math.round(Math.random()) * 2 - 1)
   )
@@ -419,7 +419,7 @@ gsap.to(sidebar, { xPercent: 100 })
    const toggleButton = document.querySelector('.menu');
    toggleButton.addEventListener('click', () => {
      if (!sidebarOpen) {
-          gsap.to(sidebar, { xPercent: 0, duration: 0.5, ease: 'power2.out' });
+          gsap.to(sidebar, { xPercent: 0, duration: 0.5, ease: 'power2.out', opacity: 1 });
           sidebarOpen = true;
      } else {
        gsap.to(sidebar, {xPercent: 100,  duration:0.5, ease: 'power2.out' });
@@ -508,14 +508,16 @@ gsap.to(".project", {
       gsap.to(".project", {
         opacity: 1,
         duration: .5,
-        y: -40
+        y: -40,
+        zIndex: 30
       });
     },
     onLeaveBack: () => {
       gsap.to(".project", {
         duration: .5,
         y: 400,
-        opacity: 0
+        opacity: 0,
+        zIndex: 0
       });
     }
   }
@@ -529,13 +531,15 @@ gsap.to(".project", {
     onEnter: () => {
       gsap.to(".project", {
         opacity: 0,
-        duration: .5
+        duration: .5,
+        zIndex: 0
       })
     },
     onLeaveBack: () => {
       gsap.to(".project ", {
         opacity: 1,
-        duration: .5
+        duration: .5,
+        zIndex: 30
       });
     }
   }
@@ -627,7 +631,7 @@ const ringExpand = () => {
     duration: 0.1,
     scale: 1.75, // Increase size on hover
     backgroundColor: 'rgba(255, 255, 255, 0.5)', // Change background color on hover
-    borderColor: '#ffffff' // Change border color on hover
+    borderColor: '#1d4ed8' // Change border color on hover
   });
 };
 
@@ -636,7 +640,7 @@ const ringLeave = () => {
     duration: 0.1,
     scale: 1, // Revert size
     backgroundColor: 'transparent', // Revert background color
-    borderColor: '#22c55e' // Revert border color
+    borderColor: '#ffffff' // Revert border color
   });
 };
 
